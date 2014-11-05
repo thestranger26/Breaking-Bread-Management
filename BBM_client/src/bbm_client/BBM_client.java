@@ -15,5 +15,6 @@ public class BBM_client {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //Test de mon premier commentaire
     }
 }
