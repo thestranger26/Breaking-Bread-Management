@@ -15,6 +15,6 @@ public class BBM_serveur {
      */
     public static void main(String[] args) {
         // TODO code application logic 
-        System.out.println("Coucou");
+        System.out.println("Coucou ça va");
     }
 }
