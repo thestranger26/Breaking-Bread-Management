@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -35,8 +35,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,27 +60,27 @@
                           <Component id="labelUtilisateur" min="-2" pref="131" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
-                          <Component id="labelMotDePasse" min="-2" pref="196" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="nomUtilisateur" min="-2" pref="218" max="-2" attributes="0"/>
-                              <Component id="motDePasse" min="-2" pref="218" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="boutonConnection" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
                           <Component id="Copyright" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="Titre" min="-2" pref="541" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="nomUtilisateur" min="-2" pref="218" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="boutonConnection" min="-2" pref="172" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jPasswordField1" alignment="1" min="-2" pref="218" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
+                          <Component id="labelMotDePasse" min="-2" pref="196" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="177" max="32767" attributes="0"/>
@@ -97,9 +98,9 @@
                   <Component id="nomUtilisateur" min="-2" pref="41" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="labelMotDePasse" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="motDePasse" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jPasswordField1" min="-2" pref="38" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="boutonConnection" min="-2" pref="53" max="-2" attributes="0"/>
                   <EmptySpace pref="99" max="32767" attributes="0"/>
                   <Component id="Copyright" min="-2" max="-2" attributes="0"/>
@@ -116,8 +117,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boutonConnectionActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="motDePasse">
         </Component>
         <Component class="javax.swing.JLabel" name="labelMotDePasse">
           <Properties>
@@ -152,6 +151,11 @@
         <Component class="javax.swing.JLabel" name="Copyright">
           <Properties>
             <Property name="text" type="java.lang.String" value="Copyright L2M2T All rights reserved"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
           </Properties>
         </Component>
       </SubComponents>

@@ -32,12 +32,12 @@ public class IHMconnection extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         boutonConnection = new javax.swing.JButton();
-        motDePasse = new javax.swing.JTextField();
         labelMotDePasse = new javax.swing.JLabel();
         nomUtilisateur = new javax.swing.JTextField();
         labelUtilisateur = new javax.swing.JLabel();
         Titre = new javax.swing.JLabel();
         Copyright = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
 
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -68,6 +68,8 @@ public class IHMconnection extends javax.swing.JPanel {
 
         Copyright.setText("Copyright L2M2T All rights reserved");
 
+        jPasswordField1.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -78,22 +80,22 @@ public class IHMconnection extends javax.swing.JPanel {
                         .addGap(345, 345, 345)
                         .addComponent(labelUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(311, 311, 311)
-                        .addComponent(labelMotDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(motDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(276, 276, 276)
                         .addComponent(Copyright))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(Titre, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Titre, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30))
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(311, 311, 311)
+                        .addComponent(labelMotDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(177, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -107,9 +109,9 @@ public class IHMconnection extends javax.swing.JPanel {
                 .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(labelMotDePasse)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(motDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
                 .addComponent(Copyright)
@@ -121,8 +123,9 @@ public class IHMconnection extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,12 +147,12 @@ public class IHMconnection extends javax.swing.JPanel {
     private javax.swing.JLabel Titre;
     private javax.swing.JButton boutonConnection;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel labelMotDePasse;
     private javax.swing.JLabel labelUtilisateur;
-    private javax.swing.JTextField motDePasse;
     private javax.swing.JTextField nomUtilisateur;
     // End of variables declaration//GEN-END:variables
 }
