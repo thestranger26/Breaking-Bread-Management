@@ -20,7 +20,7 @@ public class Controleur {
     
     public Controleur() {
         System.out.println("OK");
-        vue = new IHMManageur();
+        vue = new IHMVendeurAlertes();
 
 
 //vue.setVisible(true);

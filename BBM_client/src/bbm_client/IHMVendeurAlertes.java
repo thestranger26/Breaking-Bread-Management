@@ -163,8 +163,18 @@ public class IHMVendeurAlertes extends VuePrincipale {
         radiobuttonPayementCheque.setText("Cheque");
 
         radiobuttonPayementLiquide.setText("Liquide");
+        radiobuttonPayementLiquide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radiobuttonPayementLiquideActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Valider achat");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jScrollPane3.setViewportView(textTotalPanier);
 
@@ -285,6 +295,15 @@ public class IHMVendeurAlertes extends VuePrincipale {
     private void radiobuttonPayementCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radiobuttonPayementCBActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Facturation facture = new Facturation();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void radiobuttonPayementLiquideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementLiquideActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radiobuttonPayementLiquideActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
