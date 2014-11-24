@@ -14,15 +14,16 @@ import javax.swing.GroupLayout;
  */
 public class Controleur {
     private Utilisateur utilisateur;
-    private IHMconnection vue;
+    private VuePrincipale vue;
     private ArrayList<Produit> listeProduits;
     private HashMap<Produit,Integer> factureEnCours;
     
     public Controleur() {
         System.out.println("OK");
-        vue = new IHMconnection();
+        vue = new IHMManageur();
 
-        vue.setVisible(true);
+
+//vue.setVisible(true);
        
         
         //vue.setVisible(true);

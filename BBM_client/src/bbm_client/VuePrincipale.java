@@ -11,6 +11,7 @@ package bbm_client;
 public abstract class VuePrincipale extends javax.swing.JFrame {
 
     protected Controleur c;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -67,7 +68,6 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
                // new NewJFrame().setVisible(true);
             }
         });
