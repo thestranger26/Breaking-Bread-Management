@@ -4,6 +4,7 @@
  */
 package bbm_client;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.GroupLayout;
@@ -12,7 +13,7 @@ import javax.swing.GroupLayout;
  *
  * @author Tristan
  */
-public class Controleur {
+public class Controleur implements Serializable {
     private Utilisateur utilisateur;
     private VuePrincipale vue;
     private ArrayList<Produit> listeProduits;

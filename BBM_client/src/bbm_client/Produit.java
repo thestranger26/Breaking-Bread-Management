@@ -4,6 +4,7 @@
  */
 package bbm_client;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -11,7 +12,7 @@ import java.util.HashMap;
  *
  * @author Tristan
  */
-public abstract class Produit {
+public abstract class Produit implements Serializable {
     protected Controleur c;
     protected float prix;
     protected GregorianCalendar tempsVente;

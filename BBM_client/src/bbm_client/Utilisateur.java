@@ -4,11 +4,13 @@
  */
 package bbm_client;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Tristan
  */
-public class Utilisateur {
+public class Utilisateur implements Serializable{
     private Controleur c;
     private String nom;
     private String prenom;
