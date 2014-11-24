@@ -9,7 +9,7 @@ package bbm_client;
  *
  * @author maxime
  */
-public class IHMVendeurAlertes extends javax.swing.JPanel {
+public class IHMVendeurAlertes extends VuePrincipale {
 
     /**
      * Creates new form IHMVendeurAlertes

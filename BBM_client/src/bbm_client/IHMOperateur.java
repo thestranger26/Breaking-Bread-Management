@@ -9,13 +9,14 @@ package bbm_client;
  *
  * @author maxime
  */
-public class IHMOperateur extends javax.swing.JPanel {
+public class IHMOperateur extends VuePrincipale {
 
     /**
      * Creates new form IHMOperateur
      */
     public IHMOperateur() {
         initComponents();
+        this.setVisible(true);
     }
 
     /**

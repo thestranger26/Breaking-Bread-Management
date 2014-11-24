@@ -8,13 +8,14 @@ package bbm_client;
  *
  * @author Tristan
  */
-public class BBM_client {
+public class BBM {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //Test de mon premier commentaire
+        System.out.println("Creation du controleurs");
+        Controleur c = new Controleur();
     }
 }

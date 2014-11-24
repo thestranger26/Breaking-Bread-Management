@@ -9,7 +9,7 @@ package bbm_client;
  *
  * @author maxime
  */
-public class IHMManageur extends javax.swing.JPanel {
+public class IHMManageur extends VuePrincipale {
 
     /**
      * Creates new form IHMManageur

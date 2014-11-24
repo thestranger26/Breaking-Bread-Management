@@ -5,18 +5,25 @@
  */
 package bbm_client;
 
+import javax.swing.GroupLayout;
+
 /**
  *
  * @author maxime
  */
-public class IHMconnection extends javax.swing.JPanel {
+public class IHMconnection extends VuePrincipale {
 
     /**
      * Creates new form connection
      */
     public IHMconnection() {
         initComponents();
+
+//        this.setVisible(true);
+
     }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
