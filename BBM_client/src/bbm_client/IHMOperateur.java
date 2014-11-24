@@ -19,6 +19,7 @@ public class IHMOperateur extends VuePrincipale {
     public IHMOperateur() {
         initComponents();
         this.add(jPanel1);
+        this.setSize(1000,800);
         this.setVisible(true);
     }
 

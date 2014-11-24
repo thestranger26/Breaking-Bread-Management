@@ -18,6 +18,7 @@ public class IHMconnection extends VuePrincipale {
     public IHMconnection() {
         initComponents();
         this.add(jPanel1);
+        this.setSize(1000, 800);
         this.setVisible(true);
         
 //        this.setVisible(true);

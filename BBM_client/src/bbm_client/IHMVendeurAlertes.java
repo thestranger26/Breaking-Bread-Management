@@ -17,6 +17,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
     public IHMVendeurAlertes() {
         initComponents();
         this.add(jPanel2);
+        this.setSize(1000, 800);
         this.setVisible(true);
     }
 
