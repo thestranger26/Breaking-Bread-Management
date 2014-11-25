@@ -4,8 +4,11 @@
  */
 package bbm_client;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.TreeSet;
 
 /**
@@ -17,11 +20,11 @@ public class Viennoiserie extends Produit{
     private ListeViennoiseries type;
     private GregorianCalendar dureeCuisson;
     
-    public Viennoiserie(ListeViennoiseries t, GregorianCalendar dureeCuisson, int p, int stockMin, GregorianCalendar tempsV) {
+    public Viennoiserie(ListeViennoiseries t, GregorianCalendar dureeCuisson, int prix, int stockMin, GregorianCalendar tempsV) {
         fournees = new TreeSet<Fournee>();
         type = t;
         dureeCuisson = dureeCuisson;
-        prix = p;
+        this.prix = prix;
         tempsVente = tempsV;
         this.stockMin = stockMin;
         nbVendus = new HashMap<GregorianCalendar,Integer>();
@@ -47,5 +50,6 @@ public class Viennoiserie extends Produit{
     public void setDureeCuisson(GregorianCalendar dureeCuisson) {
         this.dureeCuisson = dureeCuisson;
     }
+
     
 }

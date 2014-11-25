@@ -4,13 +4,15 @@
  */
 package bbm_client;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Tristan
  */
 public abstract class VuePrincipale extends javax.swing.JFrame {
 
-    protected Controleur c;
+    protected Controleur controleur;
     
 
     /**
@@ -74,4 +76,10 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+
+    void afficheErreur(String phrase) {
+        javax.swing.JOptionPane.showMessageDialog(null,phrase);
+    }
+
+
 }

@@ -21,7 +21,7 @@ public class Controleur implements Serializable {
     
     public Controleur() {
         System.out.println("OK");
-        vue = new IHMVendeurAlertes();
+        vue = new IHMVendeurAlertes(this);
 
 
 //vue.setVisible(true);
@@ -35,5 +35,11 @@ public class Controleur implements Serializable {
     int getPrix(String produit) {
         int retour = 8;
         return retour;
+    }
+
+    // Permet de diminuer la quantité de produit en fonction de la quantité vendu.
+    // Est appelé lors de facturation
+    void decroitStock(String produit, Integer quantite) {
+        throw new UnsupportedOperationException("P : " + produit + " Q : " + Integer.toString(quantite) + " Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
