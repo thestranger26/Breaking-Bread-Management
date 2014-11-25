@@ -151,4 +151,8 @@ public class Controleur implements Serializable {
     public HashMap<Integer, Integer> stockHoraire(Produit produit){
         return produit.getStockVitrineMin();
     }
+
+    void decroitSotck(String hmProduit, int hmQuantite) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

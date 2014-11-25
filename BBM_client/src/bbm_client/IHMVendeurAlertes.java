@@ -5,8 +5,10 @@
  */
 package bbm_client;
 
+import java.security.KeyStore;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -66,7 +68,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
         jScrollPane5 = new javax.swing.JScrollPane();
         tablePanierProduit1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        jButtonValiderAchat = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         textTotalPanier1 = new javax.swing.JEditorPane();
         jLabel4 = new javax.swing.JLabel();
@@ -183,10 +185,10 @@ public class IHMVendeurAlertes extends VuePrincipale {
 
         jLabel3.setText("Moyen de payement");
 
-        jButton3.setText("Valider achat");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jButtonValiderAchat.setText("Valider achat");
+        jButtonValiderAchat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jButtonValiderAchatActionPerformed(evt);
             }
         });
 
@@ -246,7 +248,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonValiderAchat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel3)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
@@ -280,7 +282,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRadioButtonCheque)
                         .addGap(70, 70, 70)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonValiderAchat, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -342,10 +344,10 @@ public class IHMVendeurAlertes extends VuePrincipale {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButtonValiderAchatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderAchatActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jButtonValiderAchatActionPerformed
 
     private void bouttonAjouterPanier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouttonAjouterPanier1ActionPerformed
         // TODO add your handling code here:
@@ -377,7 +379,12 @@ public class IHMVendeurAlertes extends VuePrincipale {
     }//GEN-LAST:event_bouttonPlus1ActionPerformed
 
     private void textNbProduitAjoutPanier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNbProduitAjoutPanier1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        for(Map.Entry<String, Integer> entry : hmProduitQuantite.entrySet()) {
+            String hmProduit = entry.getKey();
+            int hmQuantite = entry.getValue();
+            controleur.decroitSotck(hmProduit, hmQuantite);
+        }
     }//GEN-LAST:event_textNbProduitAjoutPanier1ActionPerformed
 
     private void jRadioButtonCarteBleueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonCarteBleueActionPerformed
@@ -404,7 +411,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox comboBoxListeProduit1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonValiderAchat;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel3;
