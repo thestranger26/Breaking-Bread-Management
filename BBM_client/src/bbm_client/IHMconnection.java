@@ -5,6 +5,9 @@
  */
 package bbm_client;
 
+import javax.swing.JOptionPane;
+import javax.swing.Popup;
+
 
 /**
  *
@@ -15,14 +18,12 @@ public class IHMconnection extends VuePrincipale {
     /**
      * Creates new form connection
      */
-    public IHMconnection() {
+    public IHMconnection(Controleur c) {
         initComponents();
         this.add(jPanel1);
         this.setSize(1000, 800);
         this.setVisible(true);
-        
-//        this.setVisible(true);
-
+        controleur = c;
     }
     
 
@@ -95,24 +96,25 @@ public class IHMconnection extends VuePrincipale {
                         .addGap(153, 153, 153)
                         .addComponent(Titre, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30))
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(311, 311, 311)
                         .addComponent(labelMotDePasse, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(177, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(299, 299, 299)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(Titre, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(154, 154, 154)
+                .addGap(173, 173, 173)
                 .addComponent(labelUtilisateur)
                 .addGap(34, 34, 34)
                 .addComponent(nomUtilisateur, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -122,7 +124,7 @@ public class IHMconnection extends VuePrincipale {
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(boutonConnection, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(Copyright)
                 .addContainerGap())
         );
@@ -146,12 +148,25 @@ public class IHMconnection extends VuePrincipale {
 
     private void boutonConnectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boutonConnectionActionPerformed
         // TODO add your handling code here:
+        
+        String nom = nomUtilisateur.getText();
+        char[] mdp = jPasswordField1.getPassword();
+        controleur.connexion(nom,mdp);
+        
     }//GEN-LAST:event_boutonConnectionActionPerformed
 
     private void nomUtilisateurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomUtilisateurActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomUtilisateurActionPerformed
 
+     /**
+     * Méthode pour afficher une popup d'erreur
+     * @param phrase Phrase à afficher dans la popup
+     */
+    @Override
+    void afficheErreur(String phrase) {
+        javax.swing.JOptionPane.showMessageDialog(null,phrase); 
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Copyright;
@@ -166,4 +181,5 @@ public class IHMconnection extends VuePrincipale {
     private javax.swing.JLabel labelUtilisateur;
     private javax.swing.JTextField nomUtilisateur;
     // End of variables declaration//GEN-END:variables
+
 }

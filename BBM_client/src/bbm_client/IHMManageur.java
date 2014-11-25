@@ -5,6 +5,7 @@
  */
 package bbm_client;
 
+
 /**
  *
  * @author maxime
@@ -14,11 +15,13 @@ public class IHMManageur extends VuePrincipale {
     /**
      * Creates new form IHMManageur
      */
-    public IHMManageur() {
+    public IHMManageur(Controleur c) {
         initComponents();
         this.add(jPanel4);
         this.setSize(1000, 800);
         this.setVisible(true);
+        controleur = c;
+                
     }
 
     /**
@@ -317,7 +320,7 @@ public class IHMManageur extends VuePrincipale {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -432,6 +435,11 @@ public class IHMManageur extends VuePrincipale {
         labelTempsDeCuisson.setText("Temps de cuisson");
 
         bouttonValider.setText("Valider");
+        bouttonValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouttonValiderActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Stock horaire / Seuil : ");
 
@@ -548,6 +556,11 @@ public class IHMManageur extends VuePrincipale {
     private void radiobuttonPayementCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_radiobuttonPayementCBActionPerformed
+
+    private void bouttonValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouttonValiderActionPerformed
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouttonValiderActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
