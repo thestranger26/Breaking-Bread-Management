@@ -45,6 +45,8 @@ public class Controleur implements Serializable {
          * Author : LR & MS
          * Test commencerCuisson()
          */ 
+        
+        System.out.println("COUCOU TEST");
         Viennoiserie p3 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, null);
         p3.getInfosfournee(123);
         p3.commencerCuisson(123);
