@@ -33,6 +33,7 @@ public class IHMOperateur extends VuePrincipale {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         labelBBMOPERATEUR1 = new javax.swing.JLabel();
         Deconnexion1 = new javax.swing.JButton();
@@ -126,6 +127,7 @@ public class IHMOperateur extends VuePrincipale {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Deconnexion1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelBBMOPERATEUR1;
