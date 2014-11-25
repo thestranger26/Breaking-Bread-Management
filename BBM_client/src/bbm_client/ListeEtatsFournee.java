@@ -9,6 +9,7 @@ package bbm_client;
  * @author Tristan
  */
 public enum ListeEtatsFournee {
+    AttenteDebutCuisson,
     EnCuisson,
     EnVente,
     Perime,
