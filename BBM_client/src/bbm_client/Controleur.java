@@ -116,7 +116,7 @@ public class Controleur implements Serializable {
      */
     public void seDeconnecter() {
         this.vue = new IHMconnection(this);
-        this.utilisateur = null
+        this.utilisateur = null;
     }
     
    public void commencerCuisson(Fournee fournee) {
