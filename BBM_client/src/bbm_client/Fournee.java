@@ -39,9 +39,9 @@ public class Fournee implements Serializable, Comparable<Fournee>{
         idFournee = id;
         nbElementsInitial = nbElementsInit;
         nbElements = nbElementsInit;
-        etatFournee = ListeEtatsFournee.EnCuisson;
-        debutCuisson = new Date();
-        finCuisson = calculfincuisson(debutCuisson,viennoiserie.getDureeCuisson());
+        etatFournee = ListeEtatsFournee.AttenteDebutCuisson;
+        debutCuisson = null;
+        finCuisson = null;
     }
 
     
@@ -59,14 +59,20 @@ public class Fournee implements Serializable, Comparable<Fournee>{
         this.idFournee = idFournee;
     }
     public String getDebutCuisson() {
-        return df.format(debutCuisson);
+        if(debutCuisson==null){
+            return "Cuisson non lancé";
+        }else{
+            return df.format(debutCuisson);
+        }
     }
     public void setDebutCuisson(Date debutCuisson) {
         this.debutCuisson = debutCuisson;
     }
-    public Date getFinCuisson() {
-        return finCuisson;
+    public String getFinCuisson() {
+        
+        return finCuisson.toString();
     }
+
     public void setFinCuisson(Date finCuisson) {
         this.finCuisson = finCuisson;
     }
@@ -99,19 +105,19 @@ public class Fournee implements Serializable, Comparable<Fournee>{
         throw new UnsupportedOperationException("Not supported yet. FONCTION A FAIRE"); //To change body of generated methods, choose Tools | Templates.
     }
     
-        private Timer createTimer() {
-        // Création d'une instance de listener 
-        // associée au timer
+    private Timer createTimer() {
+    // Création d'une instance de listener 
+    // associée au timer
         ActionListener action = new ActionListener ()
         {
         // Méthode appelée à chaque tic du timer
             public void actionPerformed (ActionEvent event)
             {
                // viennoiserie.c.getVue().afficheErreur("reussi");
-          
-            }
-         };
-      
+
+          }
+       };
+
     // Création d'un timer qui génère un tic
     // chaque 500 millième de seconde
         return new Timer(500, action);
