@@ -5,6 +5,7 @@
  */
 package bbm_client;
 
+import java.util.HashMap;
 import java.util.Hashtable;
 import javax.swing.table.DefaultTableModel;
 
@@ -24,6 +25,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
     etatMethodePaiement eMP = etatMethodePaiement.AUCUN;
     int nbreProduitAjoute = 0;
     int prixTotal = 0;
+    HashMap<String, Integer> hmProduitQuantite = new HashMap<String, Integer>();
     
     /**
      * Creates new form IHMVendeurAlertes
@@ -351,12 +353,13 @@ public class IHMVendeurAlertes extends VuePrincipale {
         // Récupération des valeurs nécessaire
         String produit = comboBoxListeProduit1.getSelectedItem().toString();
         DefaultTableModel model = (DefaultTableModel) tablePanierProduit1.getModel();
-        int prixUnitaire = 8; //c.getPrix(produit);
+        int prixUnitaire = controleur.getPrix(produit);
         int prixProduitTotal = prixUnitaire*nbreProduitAjoute;
 
         // Ajout de la ligne dans la JTable
         model.addRow(new Object[] {Integer.toString(nbreProduitAjoute), produit, Integer.toString(prixUnitaire), Integer.toString(prixProduitTotal)});
-
+        hmProduitQuantite.put(produit, nbreProduitAjoute);
+        
         // Remise à 0 des produits à ajouter
         nbreProduitAjoute = 0;
         textNbProduitAjoutPanier1.setText(Integer.toString(nbreProduitAjoute));
