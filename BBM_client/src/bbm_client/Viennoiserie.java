@@ -98,7 +98,23 @@ public class Viennoiserie extends Produit {
     public String[] getInfos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-         /**
+    
+    /**
+     * tableau des infos : 
+     *  0 -> Type
+     *  1 -> stock
+     *  2 -> prix
+     *  3 -> stock min
+     *  4 -> stock Vitrine
+     * @return tableau des infos
+     */
+    @Override
+    public String[] getInfos() {
+        String[] tabValeurs = {type.toString(),Integer.toString(stock),Float.toString(prix),Integer.toString(stockMin),Integer.toString(stockVitrine) };
+        return null;
+    }
+    /**
+     * Author : MS & LR
      * Methode qui va initialiser la cuisson et lancer le temps de cuisson
      * @param fournee 
      */

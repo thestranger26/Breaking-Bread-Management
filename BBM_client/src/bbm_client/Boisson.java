@@ -25,10 +25,21 @@ public class Boisson extends Produit {
         nbVendus = new HashMap<Date,Integer>();
     }
 
+       /**
+     * Toutes les infos sont en String
+     * 0 -> type
+     * 1 -> temps Vente max
+     * 2 -> Stock vitrine
+     * 3 -> Stock min
+     * 4 -> stock
+     * 5 -> prix
+     * @return tableau des infos
+     */
     @Override
     public String[] getInfos() {
-       this.toString();
-        return null;
+        String[] tabValeurs = {type.toString(),tempsVente.toString(),Integer.toString(stockVitrine),Integer.toString(stockMin),Integer.toString(stock),Float.toString(prix)};
+
+        return tabValeurs;
     }
     
 }
