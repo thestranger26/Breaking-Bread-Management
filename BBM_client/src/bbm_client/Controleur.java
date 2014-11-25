@@ -57,6 +57,9 @@ public class Controleur implements Serializable {
         return ret;
         
     }
-
+    public void commencerCuisson(Fournee fournee) {
+        fournee.setEtatFournee(ListeEtatsFournee.EnCuisson);
+        fournee.getDebutCuisson();
+    }
 
 }
