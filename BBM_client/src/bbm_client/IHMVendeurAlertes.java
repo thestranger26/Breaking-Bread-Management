@@ -23,11 +23,12 @@ public class IHMVendeurAlertes extends VuePrincipale {
     /**
      * Creates new form IHMVendeurAlertes
      */
-    public IHMVendeurAlertes() {
+    public IHMVendeurAlertes(Controleur c) {
         initComponents();
         this.add(jPanel3);
         this.setSize(1000, 800);
         this.setVisible(true);
+        controleur = c;
     }
 
     /**

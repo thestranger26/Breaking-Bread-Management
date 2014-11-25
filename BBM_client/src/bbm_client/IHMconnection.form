@@ -74,22 +74,23 @@
                           <Component id="Titre" min="-2" pref="541" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="nomUtilisateur" min="-2" pref="218" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="boutonConnection" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jPasswordField1" alignment="1" min="-2" pref="218" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
                           <Component id="labelMotDePasse" min="-2" pref="196" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="177" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="299" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="nomUtilisateur" min="-2" pref="218" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="boutonConnection" min="-2" pref="172" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jPasswordField1" alignment="1" min="-2" pref="218" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,7 +99,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Component id="Titre" min="-2" pref="67" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
                   <Component id="labelUtilisateur" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="nomUtilisateur" min="-2" pref="41" max="-2" attributes="0"/>
@@ -108,7 +109,7 @@
                   <Component id="jPasswordField1" min="-2" pref="38" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="boutonConnection" min="-2" pref="53" max="-2" attributes="0"/>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
+                  <EmptySpace pref="33" max="32767" attributes="0"/>
                   <Component id="Copyright" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>

@@ -16,11 +16,12 @@ public class IHMOperateur extends VuePrincipale {
     /**
      * Creates new form IHMOperateur
      */
-    public IHMOperateur() {
+    public IHMOperateur(Controleur c) {
         initComponents();
         this.add(jPanel1);
         this.setSize(1000,800);
         this.setVisible(true);
+        controleur = c;
     }
 
     /**

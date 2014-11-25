@@ -5,6 +5,7 @@
 package bbm_client;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
@@ -75,6 +76,4 @@ public class Fournee implements Serializable{
     public void setNbElements(int nbElements) {
         this.nbElements = nbElements;
     }
-    
-    
 }

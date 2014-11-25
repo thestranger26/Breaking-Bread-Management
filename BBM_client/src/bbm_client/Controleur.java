@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.GroupLayout;
+import java.util.Arrays;
 
 /**
  *
@@ -21,7 +22,9 @@ public class Controleur implements Serializable {
     
     public Controleur() {
         System.out.println("OK");
-        vue = new IHMVendeurAlertes();
+
+        vue = new IHMconnection(this);
+
 
 
 //vue.setVisible(true);
@@ -31,4 +34,29 @@ public class Controleur implements Serializable {
         listeProduits = new ArrayList<Produit>();
         factureEnCours = new HashMap<Produit,Integer>();
     }
+
+    void connexion(String nom, char[] mdp) {
+        String rep = chercheUtilisateur(nom, mdp);
+        if (rep.equals("pasTrouve")) {
+            vue.afficheErreur("L'utilisateur n'a pas été trouvé");
+        } else {
+            
+        }
+    }
+
+    private String chercheUtilisateur(String nom, char[] mdp) {
+        String ret = "pasTrouve";
+        
+        if (nom.equals("tristan")) {
+            ret=ListeUtilisateurs.Manager.toString();
+        } else if (nom.equals("maxime")) {
+            ret=ListeUtilisateurs.OperateurDeCuisson.toString();
+        } else if (nom.equals("luca")) {
+            ret=ListeUtilisateurs.Vendeur.toString();
+        } 
+        return ret;
+        
+    }
+
+
 }
