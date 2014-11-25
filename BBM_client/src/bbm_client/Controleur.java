@@ -7,6 +7,7 @@ package bbm_client;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import javax.swing.GroupLayout;
 
 /**
@@ -32,11 +33,27 @@ public class Controleur implements Serializable {
         factureEnCours = new HashMap<Produit,Integer>();
     }
 
-    int getPrix(String produit) {
+    int getPrix(String produit) { 
+        
         int retour = 8;
         return retour;
     }
-
+    public HashMap modifierStockHoraire(Produit produit, HashMap listehoraire){
+        
+       Map<Integer,Integer> horaire = new HashMap<Integer,Integer>();
+       horaire=listehoraire;
+       for (Map.Entry<Integer, Integer> me : horaire.entrySet()) {
+           int key = me.getKey();
+           int value = me.getValue();
+           if(produit.getStockMin(key)!=value){
+               produit.modificationCreneau(key,value);
+           }            
+        }
+        return stockHoraire(produit);
+    }
+    public HashMap<Integer, Integer> stockHoraire(Produit produit){
+        return produit.getStockVitrineMin();
+    }
     // Permet de diminuer la quantité de produit en fonction de la quantité vendu.
     // Est appelé lors de facturation
     void decroitStock(String produit, Integer quantite) {

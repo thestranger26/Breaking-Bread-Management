@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -113,5 +114,33 @@ public abstract class Produit implements Serializable {
     public int cuissonEnCours(Produit prod){
         System.out.println("Coucou");
         return 0;
+    }
+    void modificationCreneau(int key, int value) {
+        
+        Map<Integer,Integer> horaire = new HashMap<Integer,Integer>();
+        horaire=stockVitrineMin;
+        for (Map.Entry<Integer, Integer> me : horaire.entrySet()) {
+           int hor = me.getKey();
+           int val = me.getValue();
+           if ( hor == key){
+               val = value ;
+           }
+         
+        }
+    }
+    int getStockMin(int key) {
+        
+        Map<Integer,Integer> horaire = new HashMap<Integer,Integer>();
+       horaire=stockVitrineMin;
+       int retour =0 ;
+       for (Map.Entry<Integer, Integer> me : horaire.entrySet()) {
+           int hor = me.getKey();
+           int val = me.getValue();
+           if ( hor == key){
+               retour = val ;
+           }
+         
+        }
+        return retour;
     }
 }
