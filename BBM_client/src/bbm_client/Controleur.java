@@ -31,4 +31,9 @@ public class Controleur implements Serializable {
         listeProduits = new ArrayList<Produit>();
         factureEnCours = new HashMap<Produit,Integer>();
     }
+
+    int getPrix(String produit) {
+        int retour = 8;
+        return retour;
+    }
 }
