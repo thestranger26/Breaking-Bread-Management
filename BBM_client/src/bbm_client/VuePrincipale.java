@@ -81,9 +81,8 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
      * Méthode pour afficher une popup d'erreur
      * @param phrase Phrase à afficher dans la popup
      */
-    void afficheErreur(String phrase) {
+    public void afficheErreur(String phrase) {
         javax.swing.JOptionPane.showMessageDialog(null,phrase);
-    }
-
+    } 
 
 }

@@ -164,7 +164,7 @@ public class IHMconnection extends VuePrincipale {
      * @param phrase Phrase à afficher dans la popup
      */
     @Override
-    void afficheErreur(String phrase) {
+    public void afficheErreur(String phrase) {
         javax.swing.JOptionPane.showMessageDialog(null,phrase); 
     }
 

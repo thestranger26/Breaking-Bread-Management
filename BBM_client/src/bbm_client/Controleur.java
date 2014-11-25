@@ -64,11 +64,15 @@ public class Controleur implements Serializable {
             vue.afficheErreur("L'utilisateur n'a pas été trouvé");
         } else {
             vue.setVisible(false);
+          
             if (rep.equals(ListeUtilisateurs.Manager.toString())) {
+                this.utilisateur = new Utilisateur(this, nom, "bla",ListeUtilisateurs.Manager );
                 vue = new IHMManageur(this);
             } else if (rep.equals(ListeUtilisateurs.OperateurDeCuisson.toString())) {
+                this.utilisateur = new Utilisateur(this, nom, "bla",ListeUtilisateurs.OperateurDeCuisson );
                 vue = new IHMOperateur(this);
-            } else if (rep.equals(ListeUtilisateurs.OperateurDeCuisson.toString())) {
+            } else if (rep.equals(ListeUtilisateurs.Vendeur.toString())) {
+                this.utilisateur = new Utilisateur(this, nom, "bla",ListeUtilisateurs.Vendeur );
                 vue = new IHMVendeurAlertes(this);
             }
         }
@@ -106,6 +110,15 @@ public class Controleur implements Serializable {
         return ret;
         
     }
+    
+    /**
+     * Methode qui deconnecter l'utilisateur et change la vue pour la remettre à la vue connexion
+     */
+    public void seDeconnecter() {
+        this.vue = new IHMconnection(this);
+        this.utilisateur = null
+    }
+    
    public void commencerCuisson(Fournee fournee) {
         fournee.setEtatFournee(ListeEtatsFournee.EnCuisson);
         fournee.getDebutCuisson();
