@@ -5,21 +5,28 @@
 package bbm_client;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
  *
  * @author Tristan
  */
-public class Fournee implements Serializable{
+public class Fournee implements Serializable, Comparable<Fournee>{
     private Viennoiserie viennoiserie;
     private int idFournee;
-    private GregorianCalendar debutCuisson;
-    private GregorianCalendar finCuisson;
+    private Date debutCuisson;
+    private Date finCuisson;
     private ListeEtatsFournee etatFournee;
     private int nbElementsInitial;
     private int nbElements;
+    DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+
     
     
     public Fournee(Viennoiserie v, int id, int nbElementsInit) {
@@ -28,7 +35,8 @@ public class Fournee implements Serializable{
         nbElementsInitial = nbElementsInit;
         nbElements = nbElementsInit;
         etatFournee = ListeEtatsFournee.EnCuisson;
-        debutCuisson = new GregorianCalendar(TimeZone.getDefault());
+        debutCuisson = new Date();
+        finCuisson = calculfincuisson(debutCuisson,viennoiserie.getDureeCuisson());
     }
 
     
@@ -45,16 +53,16 @@ public class Fournee implements Serializable{
     public void setIdFournee(int idFournee) {
         this.idFournee = idFournee;
     }
-    public GregorianCalendar getDebutCuisson() {
-        return debutCuisson;
+    public String getDebutCuisson() {
+        return df.format(debutCuisson);
     }
-    public void setDebutCuisson(GregorianCalendar debutCuisson) {
+    public void setDebutCuisson(Date debutCuisson) {
         this.debutCuisson = debutCuisson;
     }
-    public GregorianCalendar getFinCuisson() {
+    public Date getFinCuisson() {
         return finCuisson;
     }
-    public void setFinCuisson(GregorianCalendar finCuisson) {
+    public void setFinCuisson(Date finCuisson) {
         this.finCuisson = finCuisson;
     }
     public ListeEtatsFournee getEtatFournee() {
@@ -75,6 +83,14 @@ public class Fournee implements Serializable{
     public void setNbElements(int nbElements) {
         this.nbElements = nbElements;
     }
-    
+
+    @Override
+    public int compareTo(Fournee o) {
+        return 0;
+    }
+
+    private Date calculfincuisson(Date debutCuisson, int dureeCuisson) {
+        throw new UnsupportedOperationException("Not supported yet. FONCTION A FAIRE"); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

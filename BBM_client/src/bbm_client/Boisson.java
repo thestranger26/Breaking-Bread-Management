@@ -4,6 +4,7 @@
  */
 package bbm_client;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -14,12 +15,12 @@ import java.util.HashMap;
 public class Boisson extends Produit {
     private ListeBoissons type;
     
-    public Boisson (ListeBoissons t, int p, int stockMin, GregorianCalendar tempsV) {
+    public Boisson (ListeBoissons t, int p, int stockMin, Date tempsV) {
         type = t;
         prix = p;
         tempsVente = tempsV;
         this.stockMin = stockMin;
-        nbVendus = new HashMap<GregorianCalendar,Integer>();
+        nbVendus = new HashMap<Date,Integer>();
     }
     
 }
