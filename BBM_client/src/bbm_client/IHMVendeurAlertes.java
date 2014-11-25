@@ -25,7 +25,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
      */
     public IHMVendeurAlertes() {
         initComponents();
-        this.add(jPanel2);
+        this.add(jPanel3);
         this.setSize(1000, 800);
         this.setVisible(true);
     }
@@ -42,27 +42,28 @@ public class IHMVendeurAlertes extends VuePrincipale {
         jButton1 = new javax.swing.JButton();
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
-        ongletFacturation = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tableAlerte = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        comboBoxListeProduit = new javax.swing.JComboBox();
-        bouttonMoins = new javax.swing.JButton();
-        textNbProduitAjoutPanier = new javax.swing.JTextField();
-        bouttonPlus = new javax.swing.JButton();
-        bouttonAjouterPanier = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tablePanierProduit = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        radiobuttonPayementCB = new javax.swing.JRadioButton();
-        radiobuttonPayementCheque = new javax.swing.JRadioButton();
-        radiobuttonPayementLiquide = new javax.swing.JRadioButton();
-        jButton2 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        textTotalPanier = new javax.swing.JEditorPane();
-        jLabel2 = new javax.swing.JLabel();
         Déconnexion = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        ongletFacturation1 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tableAlerte1 = new javax.swing.JTable();
+        jPanel5 = new javax.swing.JPanel();
+        comboBoxListeProduit1 = new javax.swing.JComboBox();
+        bouttonMoins1 = new javax.swing.JButton();
+        textNbProduitAjoutPanier1 = new javax.swing.JTextField();
+        bouttonPlus1 = new javax.swing.JButton();
+        bouttonAjouterPanier1 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tablePanierProduit1 = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        radiobuttonPayementCB1 = new javax.swing.JRadioButton();
+        radiobuttonPayementCheque1 = new javax.swing.JRadioButton();
+        radiobuttonPayementLiquide1 = new javax.swing.JRadioButton();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        textTotalPanier1 = new javax.swing.JEditorPane();
+        jLabel4 = new javax.swing.JLabel();
         labelBBMVENDEUR = new javax.swing.JLabel();
 
         jButton1.setText("X");
@@ -94,7 +95,9 @@ public class IHMVendeurAlertes extends VuePrincipale {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        tableAlerte.setModel(new javax.swing.table.DefaultTableModel(
+        Déconnexion.setText("Déconnexion");
+
+        tableAlerte1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -105,41 +108,40 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 "Produit", "Quantité", "Type d'alerte", "Action"
             }
         ));
-        tableAlerte.setColumnSelectionAllowed(true);
-        jScrollPane1.setViewportView(tableAlerte);
-        tableAlerte.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        jScrollPane4.setViewportView(tableAlerte1);
+        tableAlerte1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
         );
 
-        ongletFacturation.addTab("Alerte", jPanel1);
+        ongletFacturation1.addTab("Alerte", jPanel4);
 
-        comboBoxListeProduit.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxListeProduit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        bouttonMoins.setText("-");
+        bouttonMoins1.setText("-");
 
-        textNbProduitAjoutPanier.setText("NB");
-        textNbProduitAjoutPanier.addActionListener(new java.awt.event.ActionListener() {
+        textNbProduitAjoutPanier1.setText("NB");
+        textNbProduitAjoutPanier1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNbProduitAjoutPanierActionPerformed(evt);
+                textNbProduitAjoutPanier1ActionPerformed(evt);
             }
         });
 
-        bouttonPlus.setText("+");
+        bouttonPlus1.setText("+");
 
-        bouttonAjouterPanier.setText("Ajouter");
+        bouttonAjouterPanier1.setText("Ajouter");
 
-        tablePanierProduit.setModel(new javax.swing.table.DefaultTableModel(
+        tablePanierProduit1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -158,114 +160,128 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 return types [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(tablePanierProduit);
+        jScrollPane5.setViewportView(tablePanierProduit1);
 
-        jLabel1.setText("Moyen de payement");
+        jLabel3.setText("Moyen de payement");
 
-        radiobuttonPayementCB.setText("CB");
-        radiobuttonPayementCB.addActionListener(new java.awt.event.ActionListener() {
+        radiobuttonPayementCB1.setText("CB");
+        radiobuttonPayementCB1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobuttonPayementCBActionPerformed(evt);
+                radiobuttonPayementCB1ActionPerformed(evt);
             }
         });
 
-        radiobuttonPayementCheque.setText("Cheque");
-        radiobuttonPayementCheque.addActionListener(new java.awt.event.ActionListener() {
+        radiobuttonPayementCheque1.setText("Cheque");
+        radiobuttonPayementCheque1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobuttonPayementChequeActionPerformed(evt);
+                radiobuttonPayementCheque1ActionPerformed(evt);
             }
         });
 
-        radiobuttonPayementLiquide.setText("Liquide");
-        radiobuttonPayementLiquide.addActionListener(new java.awt.event.ActionListener() {
+        radiobuttonPayementLiquide1.setText("Liquide");
+        radiobuttonPayementLiquide1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radiobuttonPayementLiquideActionPerformed(evt);
+                radiobuttonPayementLiquide1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Valider achat");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setText("Valider achat");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
-        jScrollPane3.setViewportView(textTotalPanier);
+        jScrollPane6.setViewportView(textTotalPanier1);
 
-        jLabel2.setText("Total :");
+        jLabel4.setText("Total :");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(comboBoxListeProduit, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(45, 45, 45)
-                                .addComponent(bouttonMoins)
-                                .addGap(18, 18, 18)
-                                .addComponent(textNbProduitAjoutPanier, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(bouttonPlus)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bouttonAjouterPanier))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(49, 49, 49)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(comboBoxListeProduit1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(bouttonMoins1)
+                        .addGap(18, 18, 18)
+                        .addComponent(textNbProduitAjoutPanier1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bouttonPlus1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bouttonAjouterPanier1)))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(117, 117, 117)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radiobuttonPayementLiquide)
-                            .addComponent(radiobuttonPayementCB)
-                            .addComponent(radiobuttonPayementCheque)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radiobuttonPayementLiquide1)
+                            .addComponent(radiobuttonPayementCB1)
+                            .addComponent(radiobuttonPayementCheque1)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBoxListeProduit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bouttonMoins, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textNbProduitAjoutPanier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bouttonPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bouttonAjouterPanier))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxListeProduit1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bouttonMoins1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textNbProduitAjoutPanier1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bouttonPlus1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bouttonAjouterPanier1))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
                         .addGap(45, 45, 45)
-                        .addComponent(radiobuttonPayementCB)
+                        .addComponent(radiobuttonPayementCB1)
                         .addGap(18, 18, 18)
-                        .addComponent(radiobuttonPayementLiquide)
+                        .addComponent(radiobuttonPayementLiquide1)
                         .addGap(18, 18, 18)
-                        .addComponent(radiobuttonPayementCheque)
+                        .addComponent(radiobuttonPayementCheque1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ongletFacturation.addTab("Facturation", jPanel2);
+        ongletFacturation1.addTab("Facturation", jPanel5);
 
-        Déconnexion.setText("Déconnexion");
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ongletFacturation1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ongletFacturation1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         labelBBMVENDEUR.setText("BBM  - VENDEUR");
 
@@ -277,24 +293,23 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(labelBBMVENDEUR)
-                        .addGap(530, 530, 530)
-                        .addComponent(Déconnexion))
-                    .addComponent(ongletFacturation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addGap(122, 122, 122)
+                        .addComponent(Déconnexion)
+                        .addGap(347, 347, 347))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(labelBBMVENDEUR))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Déconnexion)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Déconnexion)
+                    .addComponent(labelBBMVENDEUR))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ongletFacturation, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -302,73 +317,53 @@ public class IHMVendeurAlertes extends VuePrincipale {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void textNbProduitAjoutPanierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNbProduitAjoutPanierActionPerformed
+    private void textNbProduitAjoutPanier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNbProduitAjoutPanier1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNbProduitAjoutPanierActionPerformed
+    }//GEN-LAST:event_textNbProduitAjoutPanier1ActionPerformed
 
-    private void radiobuttonPayementCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCBActionPerformed
+    private void radiobuttonPayementCB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCB1ActionPerformed
         // TODO add your handling code here:
-        eMP = etatMethodePaiement.CB;
-    }//GEN-LAST:event_radiobuttonPayementCBActionPerformed
+    }//GEN-LAST:event_radiobuttonPayementCB1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void radiobuttonPayementCheque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCheque1ActionPerformed
         // TODO add your handling code here:
-        // Vérification qu'un moyen de paiement est selectionné
-        if(eMP == etatMethodePaiement.AUCUN ){
-            System.out.println("Vous devez séléctionner un moyen de paiement");
-            // Bloquer la facturation, pop-up ?
-        }
-        
-        
-        // Récupération des valeurs du tableau
-        Hashtable<String, Integer> produitQuantité = new Hashtable<String, Integer>();
-        String produit;
-        int quantite;        
-        for(int i=0; i<tablePanierProduit.getRowCount(); i++)
-        {
-            produit = tablePanierProduit.getModel().getValueAt(i,0).toString();
-            quantite = Integer.parseInt(tablePanierProduit.getModel().getValueAt(i,1).toString());
-            produitQuantité.put(produit , quantite);
-        }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_radiobuttonPayementCheque1ActionPerformed
 
-    private void radiobuttonPayementLiquideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementLiquideActionPerformed
+    private void radiobuttonPayementLiquide1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementLiquide1ActionPerformed
         // TODO add your handling code here:
-        eMP = etatMethodePaiement.LIQUIDE;
-    }//GEN-LAST:event_radiobuttonPayementLiquideActionPerformed
+    }//GEN-LAST:event_radiobuttonPayementLiquide1ActionPerformed
 
-    private void radiobuttonPayementChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementChequeActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        eMP = etatMethodePaiement.CHEQUE;
-    }//GEN-LAST:event_radiobuttonPayementChequeActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Déconnexion;
-    private javax.swing.JButton bouttonAjouterPanier;
-    private javax.swing.JButton bouttonMoins;
-    private javax.swing.JButton bouttonPlus;
-    private javax.swing.JComboBox comboBoxListeProduit;
+    private javax.swing.JButton bouttonAjouterPanier1;
+    private javax.swing.JButton bouttonMoins1;
+    private javax.swing.JButton bouttonPlus1;
+    private javax.swing.JComboBox comboBoxListeProduit1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel labelBBMVENDEUR;
-    private javax.swing.JTabbedPane ongletFacturation;
-    private javax.swing.JRadioButton radiobuttonPayementCB;
-    private javax.swing.JRadioButton radiobuttonPayementCheque;
-    private javax.swing.JRadioButton radiobuttonPayementLiquide;
-    private javax.swing.JTable tableAlerte;
-    private javax.swing.JTable tablePanierProduit;
-    private javax.swing.JTextField textNbProduitAjoutPanier;
-    private javax.swing.JEditorPane textTotalPanier;
+    private javax.swing.JTabbedPane ongletFacturation1;
+    private javax.swing.JRadioButton radiobuttonPayementCB1;
+    private javax.swing.JRadioButton radiobuttonPayementCheque1;
+    private javax.swing.JRadioButton radiobuttonPayementLiquide1;
+    private javax.swing.JTable tableAlerte1;
+    private javax.swing.JTable tablePanierProduit1;
+    private javax.swing.JTextField textNbProduitAjoutPanier1;
+    private javax.swing.JEditorPane textTotalPanier1;
     // End of variables declaration//GEN-END:variables
 }
