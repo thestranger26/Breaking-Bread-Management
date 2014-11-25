@@ -77,9 +77,12 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 
-    void afficheErreur(String phrase) {
+    /**
+     * Méthode pour afficher une popup d'erreur
+     * @param phrase Phrase à afficher dans la popup
+     */
+    public void afficheErreur(String phrase) {
         javax.swing.JOptionPane.showMessageDialog(null,phrase);
-    }
-
+    } 
 
 }

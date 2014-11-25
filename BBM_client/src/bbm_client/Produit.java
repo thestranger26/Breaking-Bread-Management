@@ -5,6 +5,9 @@
 package bbm_client;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -15,12 +18,13 @@ import java.util.HashMap;
 public abstract class Produit implements Serializable {
     protected Controleur c;
     protected float prix;
-    protected GregorianCalendar tempsVente;
+    protected Date tempsVente;
     protected int stock;
     protected int stockMin;
     protected int stockVitrine;
     protected HashMap<Integer,Integer> stockVitrineMin;
-    protected HashMap<GregorianCalendar,Integer> nbVendus;
+    protected HashMap<Date,Integer> nbVendus;
+    DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
 
     
     //GETTEURS et SETTEURS
@@ -30,10 +34,10 @@ public abstract class Produit implements Serializable {
     public void setPrix(float prix) {
         this.prix = prix;
     }
-    public GregorianCalendar getTempsVente() {
+    public Date getTempsVente() {
         return tempsVente;
     }
-    public void setTempsVente(GregorianCalendar tempsVente) {
+    public void setTempsVente(Date tempsVente) {
         this.tempsVente = tempsVente;
     }
     public int getStock() {
@@ -60,10 +64,10 @@ public abstract class Produit implements Serializable {
     public void setStockVitrineMin(HashMap<Integer, Integer> stockVitrineMin) {
         this.stockVitrineMin = stockVitrineMin;
     }
-    public HashMap<GregorianCalendar, Integer> getNbVendus() {
+    public HashMap<Date, Integer> getNbVendus() {
         return nbVendus;
     }
-    public void setNbVendus(HashMap<GregorianCalendar, Integer> nbVendus) {
+    public void setNbVendus(HashMap<Date, Integer> nbVendus) {
         this.nbVendus = nbVendus;
     }
     
@@ -80,7 +84,7 @@ public abstract class Produit implements Serializable {
      * @param date
      * @return int
      */
-    public int getVentes(GregorianCalendar date) {
+    public int getVentes(Date date) {
         return nbVendus.get((Object) date);
     }
     
@@ -89,7 +93,7 @@ public abstract class Produit implements Serializable {
      * @param date - Jour qu'on veut modifié
      * @param nb - Elements vendus ce jour
      */
-    public void setNbVendus(GregorianCalendar date, int nb) {
+    public void setNbVendus(Date date, int nb) {
         nbVendus.replace(date, nb);
     }
     
@@ -102,4 +106,12 @@ public abstract class Produit implements Serializable {
         stockVitrineMin.replace(id, nb);
     }
     
+    /**
+     * Récupère le cuissson en cours 
+     * @param prod - produit souhaité
+     */
+    public int cuissonEnCours(Produit prod){
+        System.out.println("Coucou");
+        return 0;
+    }
 }

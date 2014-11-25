@@ -151,7 +151,6 @@ public class IHMconnection extends VuePrincipale {
         
         String nom = nomUtilisateur.getText();
         char[] mdp = jPasswordField1.getPassword();
-        System.out.println(nom+mdp);
         controleur.connexion(nom,mdp);
         
     }//GEN-LAST:event_boutonConnectionActionPerformed
@@ -160,9 +159,12 @@ public class IHMconnection extends VuePrincipale {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomUtilisateurActionPerformed
 
-    
+     /**
+     * Méthode pour afficher une popup d'erreur
+     * @param phrase Phrase à afficher dans la popup
+     */
     @Override
-    void afficheErreur(String phrase) {
+    public void afficheErreur(String phrase) {
         javax.swing.JOptionPane.showMessageDialog(null,phrase); 
     }
 

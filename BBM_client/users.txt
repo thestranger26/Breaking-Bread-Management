@@ -1,0 +1,3 @@
+tristan:123:Manager
+maxime:345:Vendeur
+luca:567:OperateurDeCuisson
