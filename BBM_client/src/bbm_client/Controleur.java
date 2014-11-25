@@ -40,6 +40,11 @@ public class Controleur implements Serializable {
         factureEnCours = new HashMap<Produit,Integer>();
     }
 
+    /**
+     * cherche l'utilisateur passé en paramètre, puis s'il est trouvé, lance la fenetre du type d'utilisateur.
+     * @param nom nom de l'utilisateur
+     * @param mdp mot de passe de l'utilisateur
+     */
     void connexion(String nom, char[] mdp) {
         String rep = chercheUtilisateur(nom, mdp);
         if (rep.equals("pasTrouve")) {
@@ -56,10 +61,14 @@ public class Controleur implements Serializable {
         }
     }
 
+    /**
+     * Cherche dans le fichier utilisateur si la personne passé en paramètre y est
+     * @param nom nom de l'utilisateur
+     * @param mdp mdp de l'utilisateur
+     * @return String : "pasTrouve" si l'utilisateur n'a pas été trouvé, sinon le type d'utilisateur (Manager, OC, vendeur)
+     */
     private String chercheUtilisateur(String nom, char[] mdp) {
         String ret = "pasTrouve";
-        
-
         
         String fichier ="users.txt";
 		
@@ -80,7 +89,6 @@ public class Controleur implements Serializable {
 	catch (Exception e){
 		System.out.println(e.toString());
 	}
-        System.out.println(ListeUtilisateurs.Vendeur.toString());
         
         return ret;
         
