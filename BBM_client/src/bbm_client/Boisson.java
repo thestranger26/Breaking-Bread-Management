@@ -15,12 +15,20 @@ import java.util.HashMap;
 public class Boisson extends Produit {
     private ListeBoissons type;
     
-    public Boisson (ListeBoissons t, int p, int stockMin, Date tempsV) {
+
+    public Boisson (ListeBoissons t, int p, int stockMin, int tempsV) {
         type = t;
         prix = p;
-        tempsVente = tempsV;
+        tempsVente = new java.sql.Date(tempsV*60*100);
+
         this.stockMin = stockMin;
         nbVendus = new HashMap<Date,Integer>();
+    }
+
+    @Override
+    public String[] getInfos() {
+       this.toString();
+        return null;
     }
     
 }

@@ -114,4 +114,6 @@ public abstract class Produit implements Serializable {
         System.out.println("Coucou");
         return 0;
     }
+
+    public abstract String[] getInfos();
 }

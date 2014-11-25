@@ -21,16 +21,30 @@ public class Viennoiserie extends Produit {
     private int dureeCuisson;
     DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
     
-    public Viennoiserie(ListeViennoiseries t, int dureCuisson, int p, int stockMin, Date tempsV) {
+
+    /**
+     * Constructeur d'une viennoiserie
+     * @param t type viennoiserie
+     * @param dureCuisson
+     * @param p Prix
+     * @param stockMin
+     * @param tempsV temps de vente Max
+     */
+    public Viennoiserie(ListeViennoiseries t, int dureCuisson, int p, int stockMin,int tempsV) {
         fournees = new TreeSet<Fournee>();
         type = t;
         dureeCuisson = dureCuisson;
         prix= p;
-        tempsVente = tempsV;
+
+        tempsVente = new java.sql.Date(tempsV*60*100);
         this.stockMin = stockMin;
         nbVendus = new HashMap<Date,Integer>();        
-        Fournee fourneeInit= new Fournee(this, 123, 20);
-        fournees.add(fourneeInit);
+        Fournee f1= new Fournee(this, 123, 20);
+        Fournee f2 = new Fournee(this, 345, 20);
+        Fournee f3 = new Fournee(this, 789, 20);
+        fournees.add(f1);
+        fournees.add(f2);
+        fournees.add(f3);
     }
 
     
@@ -56,7 +70,7 @@ public class Viennoiserie extends Produit {
     
     public void getInfosfounnee(int idF) {
         ArrayList res= new ArrayList();
-     for (Fournee f : fournees) {
+        for (Fournee f : fournees) {
             if (idF == f.getIdFournee()) {
                 res.add(f.getIdFournee());
                 res.add(f.getDebutCuisson());
@@ -67,6 +81,11 @@ public class Viennoiserie extends Produit {
             }
             System.out.println(res);
         }
+    }
+
+    @Override
+    public String[] getInfos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
