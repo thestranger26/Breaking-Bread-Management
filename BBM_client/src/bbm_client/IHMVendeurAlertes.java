@@ -5,12 +5,21 @@
  */
 package bbm_client;
 
+import java.util.Hashtable;
+
 /**
  *
  * @author maxime
  */
 public class IHMVendeurAlertes extends VuePrincipale {
 
+    
+    public enum etatMethodePaiement{
+        CB, LIQUIDE, CHEQUE, AUCUN
+    }
+    
+    etatMethodePaiement eMP = etatMethodePaiement.AUCUN;
+    
     /**
      * Creates new form IHMVendeurAlertes
      */
@@ -161,6 +170,11 @@ public class IHMVendeurAlertes extends VuePrincipale {
         });
 
         radiobuttonPayementCheque.setText("Cheque");
+        radiobuttonPayementCheque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radiobuttonPayementChequeActionPerformed(evt);
+            }
+        });
 
         radiobuttonPayementLiquide.setText("Liquide");
         radiobuttonPayementLiquide.addActionListener(new java.awt.event.ActionListener() {
@@ -294,16 +308,40 @@ public class IHMVendeurAlertes extends VuePrincipale {
 
     private void radiobuttonPayementCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementCBActionPerformed
         // TODO add your handling code here:
+        eMP = etatMethodePaiement.CB;
     }//GEN-LAST:event_radiobuttonPayementCBActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Facturation facture = new Facturation();
+        // Vérification qu'un moyen de paiement est selectionné
+        if(eMP == etatMethodePaiement.AUCUN ){
+            System.out.println("Vous devez séléctionner un moyen de paiement");
+            // Bloquer la facturation, pop-up ?
+        }
+        
+        
+        // Récupération des valeurs du tableau
+        Hashtable<String, Integer> produitQuantité = new Hashtable<String, Integer>();
+        String produit;
+        int quantite;        
+        for(int i=0; i<tablePanierProduit.getRowCount(); i++)
+        {
+            produit = tablePanierProduit.getModel().getValueAt(i,0).toString();
+            quantite = Integer.parseInt(tablePanierProduit.getModel().getValueAt(i,1).toString());
+            produitQuantité.put(produit , quantite);
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void radiobuttonPayementLiquideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementLiquideActionPerformed
         // TODO add your handling code here:
+        eMP = etatMethodePaiement.LIQUIDE;
     }//GEN-LAST:event_radiobuttonPayementLiquideActionPerformed
+
+    private void radiobuttonPayementChequeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobuttonPayementChequeActionPerformed
+        // TODO add your handling code here:
+        eMP = etatMethodePaiement.CHEQUE;
+    }//GEN-LAST:event_radiobuttonPayementChequeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

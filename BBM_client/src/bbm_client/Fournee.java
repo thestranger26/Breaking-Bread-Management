@@ -4,6 +4,7 @@
  */
 package bbm_client;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
@@ -11,7 +12,7 @@ import java.util.TimeZone;
  *
  * @author Tristan
  */
-public class Fournee {
+public class Fournee implements Serializable{
     private Viennoiserie viennoiserie;
     private int idFournee;
     private GregorianCalendar debutCuisson;
