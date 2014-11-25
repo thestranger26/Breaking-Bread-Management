@@ -12,6 +12,10 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.util.GregorianCalendar;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
  *
@@ -26,6 +30,7 @@ public class Fournee implements Serializable, Comparable<Fournee>{
     private int nbElementsInitial;
     private int nbElements;
     DateFormat df = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+    private Timer timer;
 
     
     
@@ -78,7 +83,8 @@ public class Fournee implements Serializable, Comparable<Fournee>{
         this.nbElementsInitial = nbElementsInitial;
     }
     public int getNbElements() {
-        return nbElements;
+        return nbElements;  
+
     }
     public void setNbElements(int nbElements) {
         this.nbElements = nbElements;
@@ -91,6 +97,24 @@ public class Fournee implements Serializable, Comparable<Fournee>{
 
     private Date calculfincuisson(Date debutCuisson, int dureeCuisson) {
         throw new UnsupportedOperationException("Not supported yet. FONCTION A FAIRE"); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+        private Timer createTimer() {
+        // Création d'une instance de listener 
+        // associée au timer
+        ActionListener action = new ActionListener ()
+        {
+        // Méthode appelée à chaque tic du timer
+            public void actionPerformed (ActionEvent event)
+            {
+               // viennoiserie.c.getVue().afficheErreur("reussi");
+          
+            }
+         };
+      
+    // Création d'un timer qui génère un tic
+    // chaque 500 millième de seconde
+        return new Timer(500, action);
     }
     
 }
