@@ -126,6 +126,7 @@ public class Fournee implements Serializable, Comparable<Fournee>{
         ActionListener action = new ActionListener ()
         {
         // Méthode appelée à chaque tic du timer
+            @Override
             public void actionPerformed (ActionEvent event)
             {
                // viennoiserie.c.getVue().afficheErreur("reussi");
@@ -137,4 +138,5 @@ public class Fournee implements Serializable, Comparable<Fournee>{
     // chaque 500 millième de seconde
         return new Timer(500, action);
     }
-};
+}
+

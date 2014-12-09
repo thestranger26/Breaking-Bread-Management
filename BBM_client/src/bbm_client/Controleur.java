@@ -1,3 +1,4 @@
+
 /* * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -25,14 +26,10 @@ public class Controleur implements Serializable {
     private ArrayList<Produit> listeProduits;
     private HashMap<Produit,Integer> factureEnCours;
     
-    public VuePrincipale vueOp;
-    
     public Controleur() {
         System.out.println("OK");
         vue = new IHMVendeurAlertes(this);
         
-        
-
         
         //vue.setVisible(true);
         listeProduits = new ArrayList<Produit>();
@@ -50,26 +47,13 @@ public class Controleur implements Serializable {
          * Test commencerCuisson()
          */ 
         
-        Viennoiserie p3 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, 240);
+        System.out.println("COUCOU TEST");
+        Viennoiserie p3 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, 10);
         p3.getInfosfournee(123);
         p3.commencerCuisson(123);
         p3.getInfosfournee(123);
         System.out.println(p3.getInfosfournee(123));
         this.getInfosProduits();
-        
-        
-        //TESTS FONCTIONNEL A GARDER
-        vueOp = new IHMOperateur(this);
-        ArrayList<String> donneFournee = new ArrayList<>();
-       donneFournee.add("Croissant");
-       donneFournee.add("20");
-       donneFournee.add("07/1/2014 17:12:00");
-       donneFournee.add("07/1/2014 17:32:00");
-       donneFournee.add("30");
-             
-        vueOp.afficheLigneFournee(donneFournee);
-
-        
     }
 
     int getPrix(String produit) {

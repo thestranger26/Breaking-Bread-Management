@@ -28,6 +28,17 @@ public class IHMOperateur extends VuePrincipale {
         this.setVisible(true);
         controleur = c;
         
+        
+        //TESTS FONCTIONNEL A GARDER
+        //vueOp = new IHMOperateur(this);
+        ArrayList<String> donneFournee = new ArrayList<>();
+       donneFournee.add("Croissant");
+       donneFournee.add("20");
+       donneFournee.add("07/1/2014 17:12:00");
+       donneFournee.add("07/1/2014 17:32:00");
+       donneFournee.add("30");
+       this.afficheLigneFournee(donneFournee);
+        
     }
 
     /**
