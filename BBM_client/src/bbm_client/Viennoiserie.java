@@ -8,6 +8,7 @@ package bbm_client;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.TreeSet;
@@ -36,7 +37,6 @@ public class Viennoiserie extends Produit {
         type = t;
         dureeCuisson = dureCuisson;
         prix= p;
-
         tempsVente = new java.sql.Date(tempsV*60*100);
         this.stockMin = stockMin;
         nbVendus = new HashMap<Date,Integer>();        
@@ -79,24 +79,20 @@ public class Viennoiserie extends Produit {
         return ret;
     }
     
-    public void getInfosfournee(int idF) {
+    public ArrayList getInfosfournee(int idF) {
         ArrayList res= new ArrayList();
      for (Fournee f : fournees) {
             if (idF == f.getIdFournee()) {
                 res.add(f.getIdFournee());
-                res.add(f.getDebutCuisson());
+                //res.add(f.getDebutCuisson());
                 res.add(f.getEtatFournee());
-                res.add(f.getFinCuisson());
+                //res.add(f.getFinCuisson());
                 res.add(f.getNbElements());
                 res.add(f.getViennoiserie());
             }
             System.out.println(res);
         }
-    }
-
-    @Override
-    public String[] getInfos() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     return res;
     }
     
     /**
@@ -116,20 +112,31 @@ public class Viennoiserie extends Produit {
     /**
      * Author : MS & LR
      * Methode qui va initialiser la cuisson et lancer le temps de cuisson
-     * @param fournee 
+     * @param idFournee 
      */
    public void commencerCuisson(int idFournee) {
        Fournee f = getFournee(idFournee);
        if(f!=null) {
-            f.setEtatFournee(ListeEtatsFournee.EnCuisson); 
+            System.out.println(f.getDebutCuisson());
+            System.out.println(f.getFinCuisson());
+            System.out.println(f.getIdFournee());
+            System.out.println(f.getNbElements());
+            System.out.println(f.getEtatFournee());
+            System.out.println(f.getNbElementsInitial());
+            System.out.println(f.getViennoiserie());
+            f.setEtatFournee(ListeEtatsFournee.EnCuisson);
             f.setDebutCuisson(new Date()); 
-            long t = f.getDebutCuisson().getTime();
-            Date dateFinCuisson = new Date(t+(this.dureeCuisson * 60000)); 
-            f.setFinCuisson(dateFinCuisson);
-    
+            String t = f.getDebutCuisson();
+            f.setFinCuisson(ajouterMinute(f.getDebutCuissonDate(),this.dureeCuisson));         
        }
     }
     
+   public static Date ajouterMinute(Date dat, int nbMinute) { 
+        Calendar cal = Calendar.getInstance(); 
+        cal.setTime(dat);
+        cal.add(Calendar.MINUTE, nbMinute);
+        return cal.getTime();
+    }
     
     
 }

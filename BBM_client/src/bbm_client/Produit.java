@@ -114,6 +114,8 @@ public abstract class Produit implements Serializable {
      */
     public int cuissonEnCours(Produit prod){
         System.out.println("Coucou");
+        
+       
         return 0;
     }
 

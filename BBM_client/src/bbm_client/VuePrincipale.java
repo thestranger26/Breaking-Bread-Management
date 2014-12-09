@@ -4,6 +4,7 @@
  */
 package bbm_client;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -84,5 +85,10 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
     public void afficheErreur(String phrase) {
         javax.swing.JOptionPane.showMessageDialog(null,phrase);
     } 
+
+
+    void afficheLigneFournee(ArrayList donneFournee) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

@@ -288,7 +288,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ongletFacturation1.addTab("Facturation", jPanel5);
@@ -383,7 +383,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
         for(Map.Entry<String, Integer> entry : hmProduitQuantite.entrySet()) {
             String hmProduit = entry.getKey();
             int hmQuantite = entry.getValue();
-            controleur.decroitSotck(hmProduit, hmQuantite);
+            controleur.decroitStock(hmProduit, hmQuantite);
         }
     }//GEN-LAST:event_textNbProduitAjoutPanier1ActionPerformed
 

@@ -5,16 +5,21 @@
  */
 package bbm_client;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author maxime
  */
 public class IHMOperateur extends VuePrincipale {
+    private Object tablePanierProduit1;
 
     /**
      * Creates new form IHMOperateur
+     * @param c
      */
     public IHMOperateur(Controleur c) {
         initComponents();
@@ -22,8 +27,26 @@ public class IHMOperateur extends VuePrincipale {
         this.setSize(1000,800);
         this.setVisible(true);
         controleur = c;
+        
     }
 
+    /**
+     *Permet d'afficher une founée passée en paramètre sur la vue Opérateur
+     * @param donnee
+     */
+    @Override
+    public void afficheLigneFournee(ArrayList donnee){
+        DefaultTableModel table = (DefaultTableModel) tableDesCuissons1.getModel();
+        String datas[] = {"0","0","0","0","0"}; //Initialisation ligne
+        //Récupération et traitement des données
+        datas[0]=(String) donnee.get(0); //Produit
+        datas[1]=(String) donnee.get(1); //Quantité
+        datas[2]=(String) donnee.get(2); //Debut
+        datas[3]=(String) donnee.get(3); //Fin
+        datas[4]=(String) donnee.get(4); //Temps
+        table.addRow(datas);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
