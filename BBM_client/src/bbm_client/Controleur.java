@@ -28,32 +28,9 @@ public class Controleur implements Serializable {
     
     public Controleur() {
         System.out.println("OK");
-        vue = new IHMVendeurAlertes(this);
+        vue = new IHMconnection(this);
         
-        
-        //vue.setVisible(true);
-        listeProduits = new ArrayList<Produit>();
-        factureEnCours = new HashMap<Produit,Integer>();
-        
-        Viennoiserie p1 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, 10);
-        Viennoiserie p2 = new Viennoiserie(ListeViennoiseries.PainAuLait, 20, 3, 16, 10);
-        Boisson b1 = new Boisson(ListeBoissons.Sprite, 3, 10, 100);
-        listeProduits.add(p1);
-        listeProduits.add(p2);
-        listeProduits.add(b1);
-        
-        /**
-         * Author : LR & MS
-         * Test commencerCuisson()
-         */ 
-        
-        System.out.println("COUCOU TEST");
-        Viennoiserie p3 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, 10);
-        p3.getInfosfournee(123);
-        p3.commencerCuisson(123);
-        p3.getInfosfournee(123);
-        System.out.println(p3.getInfosfournee(123));
-        this.getInfosProduits();
+        initialisationDonnees();
     }
 
     int getPrix(String produit) {
@@ -73,14 +50,54 @@ public class Controleur implements Serializable {
      * Author : TL
      */
     public void seDeconnecter() {
+        this.vue.setVisible(false);
         this.vue = new IHMconnection(this);
         this.utilisateur = null;
     }
     
-    public String[] getInfosProduits() {
-        return null;
-        
-        
+    /**
+     * Author TL
+     * Retourne un hashMap constitué en clé du type de viennoiserie et en valeur d'un array liste contenant toutes les fournées de la viennoiserie correspondante
+     * @return HashMap<ListeViennoiseries,ArrayList<String[]>>
+     */
+    public HashMap<ListeViennoiseries,ArrayList<String[]>> getInfosFournees() {
+        HashMap<ListeViennoiseries,ArrayList<String[]>> bla = new HashMap();
+        for (Produit p : listeProduits) {
+            if (p.getBorV().equals("Viennoiserie")) {
+                bla.put(((Viennoiserie)p).getType(), ((Viennoiserie)p).getInfosFournees());
+            }
+        }
+        return bla;
+    }
+    
+    /**
+     * Author TL
+     * Retourne un hashMap constitué en clé du type de viennoiserie et en valeur tableau contenant les infos de la viennoiserie correspondante
+     * @return HashMap<ListeViennoiseries,String[]>
+    */
+    public HashMap<ListeViennoiseries, String[]> getInfosViennoiseries() {
+        HashMap<ListeViennoiseries,String[]> bla = new HashMap();
+        for (Produit p : listeProduits) {
+            if (p.getBorV().equals("Viennoiserie")) {
+                bla.put(((Viennoiserie)p).getType(), ((Viennoiserie)p).getInfos());
+            }
+        }
+        return bla;
+    }
+    
+    /**
+     * Author TL
+     * Retourne un hashMap constitué en clé du type de viennoiserie et en valeur tableau contenant les infos de la boisson correspondante
+     * @return HashMap<ListeViennoiseries,String[]>
+    */
+    public HashMap<ListeBoissons, String[]> getInfosBoisson() {
+        HashMap<ListeBoissons,String[]> bla = new HashMap();
+        for (Produit p : listeProduits) {
+            if (p.getBorV().equals("Boisson")) {
+                bla.put(((Boisson)p).getType(), ((Boisson)p).getInfos());
+            }
+        }
+        return bla;
     }
     
     /**
@@ -99,7 +116,7 @@ public class Controleur implements Serializable {
                 vue = new IHMManageur(this);
             } else if (rep.equals(ListeUtilisateurs.OperateurDeCuisson.toString())) {
                 vue = new IHMOperateur(this);
-            } else if (rep.equals(ListeUtilisateurs.OperateurDeCuisson.toString())) {
+            } else if (rep.equals(ListeUtilisateurs.Vendeur.toString())) {
                 vue = new IHMVendeurAlertes(this);
             }
         }
@@ -168,4 +185,38 @@ public class Controleur implements Serializable {
     public HashMap<Integer, Integer> stockHoraire(Produit produit){
         return produit.getStockVitrineMin();
     }
+
+    private void initialisationDonnees() {
+        //vue.setVisible(true);
+        listeProduits = new ArrayList<Produit>();
+        factureEnCours = new HashMap<Produit,Integer>();
+        
+        Viennoiserie p1 = new Viennoiserie(ListeViennoiseries.Croissant, 30, 2, 20, 10);
+        Viennoiserie p2 = new Viennoiserie(ListeViennoiseries.PainAuLait, 20, 3, 16, 10);
+        Viennoiserie p3 = new Viennoiserie(ListeViennoiseries.PainAuChocolat, 20, 3, 16, 10);
+        Viennoiserie p4 = new Viennoiserie(ListeViennoiseries.PainAuRaisin, 20, 3, 16, 10);
+        Boisson b1 = new Boisson(ListeBoissons.Sprite, (float) 1.5, 5, 100);
+        Boisson b2 = new Boisson(ListeBoissons.CocaCola, 2, 8, 100);
+        Boisson b3 = new Boisson(ListeBoissons.PetiteChapelle, 40, 2, 100);
+        Boisson b4 = new Boisson(ListeBoissons.Whisky, 14, 2, 100);
+        Boisson b5 = new Boisson(ListeBoissons.SaintJoseph, 10, 3, 100);
+        Boisson b6 = new Boisson(ListeBoissons.FantaCitron, 3, 6, 100);
+        Boisson b7 = new Boisson(ListeBoissons.Pepsi, 3, 4, 100);
+        Boisson b8 = new Boisson(ListeBoissons.Orangina, (float) 2.5, 6, 100);
+        Boisson b9 = new Boisson(ListeBoissons.JusDOrange, (float) 1.5, 4, 100);
+        listeProduits.add(p1);
+        listeProduits.add(p2);
+        listeProduits.add(p3);
+        listeProduits.add(p4);
+        listeProduits.add(b1);
+        listeProduits.add(b2);
+        listeProduits.add(b3);
+        listeProduits.add(b4);
+        listeProduits.add(b5);
+        listeProduits.add(b6);
+        listeProduits.add(b7);
+        listeProduits.add(b8);
+        listeProduits.add(b9);        
+    }
+
 }

@@ -875,6 +875,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeconnexionActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="labelBBMManageur">
           <Properties>

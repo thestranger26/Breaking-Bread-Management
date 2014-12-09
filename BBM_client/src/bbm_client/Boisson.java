@@ -16,17 +16,22 @@ public class Boisson extends Produit {
     private ListeBoissons type;
     
 
-    public Boisson (ListeBoissons t, int p, int stockMin, int tempsV) {
+    public Boisson (ListeBoissons t, float prix, int stockMin, int tempsV) {
         type = t;
-        prix = p;
+        this.prix = prix;
         tempsVente = new java.sql.Date(tempsV*60*100);
-
         this.stockMin = stockMin;
         nbVendus = new HashMap<Date,Integer>();
     }
+    
+    public ListeBoissons getType() {
+        return type;
+    }
+    
 
        /**
      * Toutes les infos sont en String
+     * -1 -> "Boisson"
      * 0 -> type
      * 1 -> temps Vente max
      * 2 -> Stock vitrine
@@ -37,9 +42,18 @@ public class Boisson extends Produit {
      */
     @Override
     public String[] getInfos() {
-        String[] tabValeurs = {type.toString(),tempsVente.toString(),Integer.toString(stockVitrine),Integer.toString(stockMin),Integer.toString(stock),Float.toString(prix)};
+        String[] tabValeurs = {"Boisson", type.toString(),tempsVente.toString(),Integer.toString(stockVitrine),Integer.toString(stockMin),Integer.toString(stock),Float.toString(prix)};
 
         return tabValeurs;
+    }
+    
+    /**
+     * Dit si l'élément est de type boisson ou viennoiserie
+     * @return String
+     */
+    @Override
+    public String getBorV() {
+        return "Boisson";
     }
     
 }

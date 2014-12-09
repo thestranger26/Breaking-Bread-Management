@@ -151,4 +151,6 @@ public abstract class Produit implements Serializable {
         }
         return retour;
     }
+    
+    public abstract String getBorV();
 }

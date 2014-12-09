@@ -11,6 +11,7 @@ package bbm_client;
 public enum ListeEtatsFournee {
     AttenteDebutCuisson,
     EnCuisson,
+    EnAttenteMiseEnVente,
     EnVente,
     Perime,
     Epuise

@@ -494,6 +494,11 @@ public class IHMManageur extends VuePrincipale {
         ongletFacturation1.addTab("Paramétrage", jPanel5);
 
         Deconnexion.setText("Déconnexion");
+        Deconnexion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeconnexionActionPerformed(evt);
+            }
+        });
 
         labelBBMManageur.setText("BBM  - MANAGEUR");
 
@@ -561,6 +566,10 @@ public class IHMManageur extends VuePrincipale {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_bouttonValiderActionPerformed
+
+    private void DeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeconnexionActionPerformed
+        super.deconnexion();
+    }//GEN-LAST:event_DeconnexionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

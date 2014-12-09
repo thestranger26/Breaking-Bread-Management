@@ -90,5 +90,10 @@ public abstract class VuePrincipale extends javax.swing.JFrame {
     void afficheLigneFournee(ArrayList donneFournee) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
+    protected void deconnexion(){
+        controleur.seDeconnecter();
+    }
 
 }

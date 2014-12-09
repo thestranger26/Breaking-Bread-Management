@@ -138,5 +138,24 @@ public class Fournee implements Serializable, Comparable<Fournee>{
     // chaque 500 millième de seconde
         return new Timer(500, action);
     }
+    
+        
+    /**
+     * tableau des infos d'une fournée
+     * 0 -> id
+     * 1 -> date debut cuisson
+     * 2 -> Etat de la fournee
+     * 3 -> date de fin de cuisson
+     * 4 -> nombre d'éléments initial
+     * 5 -> nombre d'éléments actuel
+     * 
+     * @param id de la fournee a retournee
+     * @return tableau des infos
+     */
+    public String[] getInfosFournee() {
+        String[] ret ={Integer.toString(idFournee),getDebutCuisson(), getEtatFournee().toString(), getFinCuisson(),Integer.toString(getNbElementsInitial()), Integer.toString(getNbElements())};
+        
+        return ret;
+    }
 }
 

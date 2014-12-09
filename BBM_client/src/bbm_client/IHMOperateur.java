@@ -31,14 +31,7 @@ public class IHMOperateur extends VuePrincipale {
         
         //TESTS FONCTIONNEL A GARDER
         //vueOp = new IHMOperateur(this);
-        ArrayList<String> donneFournee = new ArrayList<>();
-       donneFournee.add("Croissant");
-       donneFournee.add("20");
-       donneFournee.add("07/1/2014 17:12:00");
-       donneFournee.add("07/1/2014 17:32:00");
-       donneFournee.add("30");
-       this.afficheLigneFournee(donneFournee);
-        
+        affichesLignes();
     }
 
     /**
@@ -78,6 +71,11 @@ public class IHMOperateur extends VuePrincipale {
         labelBBMOPERATEUR1.setText("BBM  - OPERATEUR");
 
         Deconnexion1.setText("Déconnexion");
+        Deconnexion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Deconnexion1ActionPerformed(evt);
+            }
+        });
 
         tableDesCuissons1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,7 +104,7 @@ public class IHMOperateur extends VuePrincipale {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 796, Short.MAX_VALUE)
+            .addGap(0, 804, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
@@ -158,6 +156,10 @@ public class IHMOperateur extends VuePrincipale {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Deconnexion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Deconnexion1ActionPerformed
+        super.deconnexion();
+    }//GEN-LAST:event_Deconnexion1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Deconnexion1;
@@ -168,4 +170,12 @@ public class IHMOperateur extends VuePrincipale {
     private javax.swing.JLabel labelTableauDesCuissons1;
     private javax.swing.JTable tableDesCuissons1;
     // End of variables declaration//GEN-END:variables
+
+    private void affichesLignes() {
+        recupFournees() ;
+    }
+
+    private void recupFournees() {
+        
+    }
 }

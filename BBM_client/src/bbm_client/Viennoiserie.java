@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.TreeSet;
 
 /**
@@ -40,12 +41,8 @@ public class Viennoiserie extends Produit {
         tempsVente = new java.sql.Date(tempsV*60*100);
         this.stockMin = stockMin;
         nbVendus = new HashMap<Date,Integer>();        
-        Fournee f1= new Fournee(this, 123, 20);
-        Fournee f2 = new Fournee(this, 345, 20);
-        Fournee f3 = new Fournee(this, 789, 20);
-        fournees.add(f1);
-        fournees.add(f2);
-        fournees.add(f3);
+  
+        initFournees();
     }
 
     
@@ -99,6 +96,7 @@ public class Viennoiserie extends Produit {
     
     /**
      * tableau des infos : 
+     *  -1 -> "Viennoiserie"
      *  0 -> Type
      *  1 -> stock
      *  2 -> prix
@@ -108,7 +106,21 @@ public class Viennoiserie extends Produit {
      */
     @Override
     public String[] getInfos() {
-        String[] tabValeurs = {type.toString(),Integer.toString(stock),Float.toString(prix),Integer.toString(stockMin),Integer.toString(stockVitrine) };
+        String[] tabValeurs = {"Viennoiserie",type.toString(),Integer.toString(stock),Float.toString(prix),Integer.toString(stockMin),Integer.toString(stockVitrine) };
+        return tabValeurs;
+    }
+
+    
+    /**
+     * Retourne une liste de tableau contenant les informations des fournées
+     * @return ArrayList<String []>
+     */
+    public ArrayList<String []> getInfosFournees() {
+        ArrayList<String[]> liste = new ArrayList();
+        
+        for (Fournee f : fournees) {
+            liste.add(f.getInfosFournee());
+        }
         return null;
     }
     /**
@@ -138,6 +150,41 @@ public class Viennoiserie extends Produit {
         cal.setTime(dat);
         cal.add(Calendar.MINUTE, nbMinute);
         return cal.getTime();
+    }
+
+    private void initFournees() {
+        Random r = new Random();
+        int valeur = 1 + r.nextInt(3 - 1);
+        
+        switch (valeur) {
+                case 1:
+                    Random r2 = new Random();
+                    int v2 = 1+ r2.nextInt(1000);
+                    Fournee f = new Fournee(this, v2,2*stockMin);
+                    fournees.add(f);
+                    this.commencerCuisson(v2);
+                    break;
+                case 2:
+                    Random r3 = new Random();
+                    int v3 = 1+ r3.nextInt(1000);
+                    Fournee f2 = new Fournee(this, v3,2*stockMin);
+                    f2.setEtatFournee(ListeEtatsFournee.EnCuisson);
+                    f2.setFinCuisson(new Date(System.currentTimeMillis()*6000*(dureeCuisson/3)));
+                    fournees.add(f2);
+                    break;
+                case 3:
+                    Random r4 = new Random();
+                    int v4 = 1+ r4.nextInt(1000);
+                    Fournee f3 = new Fournee(this, v4,2*stockMin);
+                    f3.setEtatFournee(ListeEtatsFournee.EnVente);
+                    fournees.add(f3);
+                    break;
+        }                   
+    }
+    
+    @Override
+    public String getBorV() {
+        return "Viennoiserie";
     }
     
     
