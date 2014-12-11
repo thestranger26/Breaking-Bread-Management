@@ -55,5 +55,10 @@ public class Boisson extends Produit {
     public String getBorV() {
         return "Boisson";
     }
+
+    @Override
+    public String getNom() {
+        return type.toString();
+    }
     
 }

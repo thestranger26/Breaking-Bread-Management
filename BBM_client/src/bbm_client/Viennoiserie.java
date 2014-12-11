@@ -186,6 +186,11 @@ public class Viennoiserie extends Produit {
     public String getBorV() {
         return "Viennoiserie";
     }
+
+    @Override
+    public String getNom() {
+        return type.toString();
+    }
     
     
 }

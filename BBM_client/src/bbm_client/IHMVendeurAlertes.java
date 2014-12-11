@@ -6,6 +6,7 @@
 package bbm_client;
 
 import java.security.KeyStore;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
@@ -28,6 +29,9 @@ public class IHMVendeurAlertes extends VuePrincipale {
     int nbreProduitAjoute = 0;
     int prixTotal = 0;
     HashMap<String, Integer> hmProduitQuantite = new HashMap<String, Integer>();
+    ArrayList<String> listeProduit = new ArrayList<String>();
+    int nbreLigne = 0;
+    int id = 0;
     
     /**
      * Creates new form IHMVendeurAlertes
@@ -38,8 +42,13 @@ public class IHMVendeurAlertes extends VuePrincipale {
         this.setSize(1000, 800);
         this.setVisible(true);
         controleur = c;
+        listeProduit = c.getListeProduit();
+        for (String s : listeProduit) {
+            comboBoxListeProduit1.addItem(s);
+        }
+        
     }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,6 +68,8 @@ public class IHMVendeurAlertes extends VuePrincipale {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableAlerte1 = new javax.swing.JTable();
+        jComboBox1 = new javax.swing.JComboBox();
+        jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         comboBoxListeProduit1 = new javax.swing.JComboBox();
         bouttonMoins1 = new javax.swing.JButton();
@@ -115,17 +126,32 @@ public class IHMVendeurAlertes extends VuePrincipale {
 
         tableAlerte1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Produit", "Quantité", "Type d'alerte", "Action"
+                "Produit", "Quantité", "Type d'alerte", "Id"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableAlerte1.setColumnSelectionAllowed(true);
         jScrollPane4.setViewportView(tableAlerte1);
         tableAlerte1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
+
+        jButton2.setText("Supprimer l'alerte");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -133,16 +159,30 @@ public class IHMVendeurAlertes extends VuePrincipale {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 867, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ongletFacturation1.addTab("Alerte", jPanel4);
 
-        comboBoxListeProduit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboBoxListeProduit1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { }));
 
         bouttonMoins1.setText("-");
 
@@ -169,21 +209,25 @@ public class IHMVendeurAlertes extends VuePrincipale {
 
         tablePanierProduit1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Quantité", "Produit", "Prix", "X"
+                "Quantité", "Produit", "Prix Unitaire", "Prix"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane5.setViewportView(tablePanierProduit1);
@@ -253,13 +297,13 @@ public class IHMVendeurAlertes extends VuePrincipale {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonValiderAchat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jRadioButtonCarteBleue)
-                                    .addGap(0, 0, Short.MAX_VALUE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonValiderAchat, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jRadioButtonCarteBleue))
+                                .addGap(0, 21, Short.MAX_VALUE)))
+                        .addContainerGap(42, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButtonCheque)
@@ -351,6 +395,30 @@ public class IHMVendeurAlertes extends VuePrincipale {
     private void jButtonValiderAchatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValiderAchatActionPerformed
         // TODO add your handling code here:
         
+        for(Map.Entry<String, Integer> entry : hmProduitQuantite.entrySet()) {
+            String hmProduit = entry.getKey();
+            int hmQuantite = entry.getValue();
+            controleur.decroitStock(hmProduit, hmQuantite);
+            controleur.miseAJourFacturation(hmProduit, hmQuantite);
+        }
+        
+        for (String s : listeProduit) {
+            if(controleur.verifStockMini(s) == true){
+                DefaultTableModel model = (DefaultTableModel) tableAlerte1.getModel();
+                model.addRow(new Object[] {s, Integer.toString(nbreProduitAjoute), "Stock mini insuffisant", id});
+            }
+        }
+        
+        prixTotal = 0;
+        textTotalPanier1.setText(Integer.toString(prixTotal));
+        
+        
+        DefaultTableModel model = (DefaultTableModel) tablePanierProduit1.getModel();
+        int i;
+        for(i=nbreLigne-1;i>=0;i--){
+            model.removeRow(i);
+        }
+        
     }//GEN-LAST:event_jButtonValiderAchatActionPerformed
 
     private void bouttonAjouterPanier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouttonAjouterPanier1ActionPerformed
@@ -370,6 +438,9 @@ public class IHMVendeurAlertes extends VuePrincipale {
         nbreProduitAjoute = 0;
         textNbProduitAjoutPanier1.setText(Integer.toString(nbreProduitAjoute));
 
+        // Incrémentation du nombre de lignes présente dans le tableau
+        nbreLigne++;
+        
         // Mise à jour du prix total
         prixTotal += prixProduitTotal;
         textTotalPanier1.setText(Integer.toString(prixTotal));
@@ -384,11 +455,7 @@ public class IHMVendeurAlertes extends VuePrincipale {
 
     private void textNbProduitAjoutPanier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNbProduitAjoutPanier1ActionPerformed
         // TODO add your handling code here
-        for(Map.Entry<String, Integer> entry : hmProduitQuantite.entrySet()) {
-            String hmProduit = entry.getKey();
-            int hmQuantite = entry.getValue();
-            controleur.decroitStock(hmProduit, hmQuantite);
-        }
+        
     }//GEN-LAST:event_textNbProduitAjoutPanier1ActionPerformed
 
     private void jRadioButtonCarteBleueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonCarteBleueActionPerformed
@@ -410,6 +477,11 @@ public class IHMVendeurAlertes extends VuePrincipale {
         super.deconnexion();
     }//GEN-LAST:event_DéconnexionActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Déconnexion;
@@ -419,7 +491,9 @@ public class IHMVendeurAlertes extends VuePrincipale {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox comboBoxListeProduit1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonValiderAchat;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel3;

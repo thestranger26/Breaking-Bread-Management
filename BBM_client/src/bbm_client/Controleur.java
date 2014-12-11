@@ -34,8 +34,22 @@ public class Controleur implements Serializable {
     }
 
     int getPrix(String produit) {
-        int retour = 8;
-        return retour;
+        int prix = 0;
+        for(Produit p : listeProduits){
+            if(p.getNom().equals(produit)){
+                prix = (int) p.getPrix();
+            }
+        }
+        return prix;
+    }
+    
+    public ArrayList<String> getListeProduit() {
+        ArrayList<String> liste;
+        liste = new ArrayList<>();
+        for (Produit p : listeProduits) {
+            liste.add(p.getNom());
+        }
+        return liste;
     }
 
     /**
@@ -43,7 +57,11 @@ public class Controleur implements Serializable {
      * Permet de diminuer la quantité de produit en fonction de la quantité vendu.
     */
     void decroitStock(String produit, Integer quantite) {
-        throw new UnsupportedOperationException("P : " + produit + " Q : " + Integer.toString(quantite) + " Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for(Produit p : listeProduits){
+            if(p.getNom().equals(produit)){
+                p.setStockVitrine(p.getStockVitrine() - quantite);
+            }
+        } 
     }
     
     /**
@@ -185,6 +203,24 @@ public class Controleur implements Serializable {
     public HashMap<Integer, Integer> stockHoraire(Produit produit){
         return produit.getStockVitrineMin();
     }
+    
+    /**
+     * Author : TdF
+     * @param produit
+     * @return retour
+     * Retourne un boolean indiquant si le produit a dépassé le stock minimal de produit nécessaire en rayon
+     */
+    public boolean verifStockMini(String produit){
+        boolean retour = false;
+        for(Produit p : listeProduits){
+            if(p.getNom().equals(produit)){
+                if(p.getStock() < p.getStockMin()){
+                    retour = true;
+                }                
+            }
+        }
+        return retour;
+    }
 
     private void initialisationDonnees() {
         //vue.setVisible(true);
@@ -217,6 +253,24 @@ public class Controleur implements Serializable {
         listeProduits.add(b7);
         listeProduits.add(b8);
         listeProduits.add(b9);        
+    }
+
+    /**
+     * Author : TdF
+     * @param hmProduit hmQuantite 
+     * @return 
+     * Mais à jour les facturations du produits .
+     */
+    void miseAJourFacturation(String hmProduit, int hmQuantite) {
+        for (Produit p : listeProduits) {
+            if(p.getNom().equals(hmProduit)){
+                Date date = new Date();
+                HashMap<Date, Integer> nbProduitVendu = new HashMap<>();
+                nbProduitVendu = p.getNbVendus();
+                nbProduitVendu.put(date, hmQuantite);
+                p.setNbVendus(nbProduitVendu);
+            }
+        }        
     }
 
 }

@@ -121,7 +121,7 @@ public abstract class Produit implements Serializable {
 
     public abstract String[] getInfos();
 
-
+    public abstract String getNom();
     
     void modificationCreneau(int key, int value) {
         
